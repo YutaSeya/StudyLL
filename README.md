@@ -1,7 +1,7 @@
 # STM32 LLライブラリ勉強用リポジトリ
 
 ## CUBEMXの設定
-HALライブラリと同様にピン設定をしたのち、Project ManagerのAdvanced Settingにおいて、使用するライブラリをHALからすべてLLに変更する。
+HALライブラリと同様にピン設定をしたのち、Project ManagerのAdvanced Settingにおいて、使用するライブラリをHALからすべてLLに変更を行う。
 
 ## 使用する予定の機能
 勉強をマイクロマウスの機体を使用して行っているためマイクロマウスに必要な機能の動作確認を行う。
@@ -12,3 +12,5 @@ HALライブラリと同様にピン設定をしたのち、Project ManagerのAd
 - ADC
 - FLASH
 
+## その他
+- マイクロマウスに組み込んで動作できるようにするまでが目標

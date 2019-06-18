@@ -49,8 +49,10 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma.c \
 Src/syscalls.c \
 $(wildcard Src/Common/*.c) \
+$(wildcard Src/Controller/*.c) \
 Src/tim.c \
-Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c \
+Src/variable.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -120,6 +122,7 @@ AS_INCLUDES =
 C_INCLUDES =  \
 -IInc \
 -IInc/Common \
+-IInc/Controller \
 -IDrivers/STM32F4xx_HAL_Driver/Inc \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include \

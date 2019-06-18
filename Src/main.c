@@ -37,6 +37,9 @@
 void __io_putchar(uint8_t ch) {
   USART_TransmmitByte(ch);
 }
+
+#include "variable.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -133,6 +136,8 @@ int main(void)
     fullcolorled++;
     if(fullcolorled > 7 ) fullcolorled = 0;
     #endif
+
+    printf("velocity left : %5.5f, right : %5.5f\r", left_real.velocity, right_real.velocity );
 
 
   }
