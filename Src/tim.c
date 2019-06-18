@@ -237,6 +237,19 @@ void TIM2_PWM_Out( uint32_t ch1, uint32_t ch2 )
 
 	LL_TIM_OC_SetCompareCH2(TIM2, ch2);
 }
+
+void TIM3_PWM_Out( uint32_t ch1, uint32_t ch2 )
+{
+	if ( ch1 < 0 ) ch1 = 0;
+	if ( ch1 > 399 ) ch1 = 399;
+
+	if ( ch2 < 0 ) ch2 = 0;
+	if ( ch2 > 399 ) ch2 = 399;
+
+	LL_TIM_OC_SetCompareCH1(TIM3, ch1);
+
+	LL_TIM_OC_SetCompareCH2(TIM3, ch2);
+}
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

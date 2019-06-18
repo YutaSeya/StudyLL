@@ -42,6 +42,7 @@ void MX_TIM8_Init(void);
 /* USER CODE BEGIN Prototypes */
 void TIM_PWM_Start( void );
 void TIM2_PWM_Out( uint32_t ch1, uint32_t ch2 );
+void TIM3_PWM_Out( uint32_t ch1, uint32_t ch2 );
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
