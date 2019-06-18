@@ -17,11 +17,13 @@ void TIM_Encoder_Start( void )
 float getEncoderLeftVelocity( void )
 {
   uint16_t cnt = TIM8->CNT;
+  //uint16_t cnt = LL_TIM_GetCounter(TIM8);
   int16_t enc;
   float omega;
   float velocity;
 
   TIM8->CNT = 0;
+  //LL_TIM_SetCounter(TIM8,0);
 
   if ( cnt > 32767 ) enc = (int16_t)cnt;
   else enc = (int16_t)cnt;
@@ -37,11 +39,13 @@ float getEncoderLeftVelocity( void )
 float getEncoderRightVelocity( void )
 {
   uint16_t cnt = TIM1->CNT;
+  //uint16_t cnt = LL_TIM_GetCounter(TIM1);
   int16_t enc;
   float omega;
   float velocity;
 
   TIM1->CNT = 0;
+  //LL_TIM_SetCounter(TIM1,0);
 
   if ( cnt > 32767 ) enc = -1 * (int16_t)cnt;
   else enc = -1 * (int16_t)cnt;

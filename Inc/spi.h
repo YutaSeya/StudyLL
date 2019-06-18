@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : TIM.h
+  * File Name          : SPI.h
   * Description        : This file provides code for the configuration
-  *                      of the TIM instances.
+  *                      of the SPI instances.
   ******************************************************************************
   * @attention
   *
@@ -17,8 +17,8 @@
   ******************************************************************************
   */
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __tim_H
-#define __tim_H
+#ifndef __spi_H
+#define __spi_H
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -27,27 +27,23 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-#include <stdint.h>
+
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-void MX_TIM1_Init(void);
-void MX_TIM2_Init(void);
-void MX_TIM3_Init(void);
-void MX_TIM8_Init(void);
+void MX_SPI3_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-void TIM_PWM_Start( void );
-void TIM2_PWM_Out( uint32_t ch1, uint32_t ch2 );
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ tim_H */
+#endif /*__ spi_H */
 
 /**
   * @}

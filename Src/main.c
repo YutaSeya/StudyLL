@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "spi.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -39,6 +40,10 @@ void __io_putchar(uint8_t ch) {
 }
 
 #include "variable.h"
+
+#include "encoder.h"
+#include "buzzer.h"
+#include "motor.h"
 
 /* USER CODE END Includes */
 
@@ -83,7 +88,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-
+  
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -112,8 +117,20 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM1_Init();
   MX_TIM8_Init();
+  MX_TIM3_Init();
+  MX_TIM2_Init();
+  MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
+  /* my initialize */
   setbuf(stdout, NULL);
+  LL_SYSTICK_EnableIT();
+  TIM_Encoder_Start();
+  TIM_PWM_Start();
+  enableMotorICStby();
+
+  // buzzer beep
+  setBuzzerMonophonic( NORMAL, 300 );
+  LL_mDelay(300);  
  
   /* USER CODE END 2 */
 
@@ -136,9 +153,6 @@ int main(void)
     fullcolorled++;
     if(fullcolorled > 7 ) fullcolorled = 0;
     #endif
-
-    printf("velocity left : %5.5f, right : %5.5f\r", left_real.velocity, right_real.velocity );
-
 
   }
   /* USER CODE END 3 */
